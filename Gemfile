@@ -31,6 +31,8 @@ gem 'capybara', group: :test
 
 gem 'rspec-collection_matchers', group: :test
 
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

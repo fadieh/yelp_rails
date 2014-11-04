@@ -3394,3 +3394,51 @@ Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-04 18:02:04 +00
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-04 18:02:04 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-04 18:06:05 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.4ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Exists (0.3ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 4]]
+  [1m[36mReview Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 5]]
+  Rendered restaurants/index.html.erb within layouts/application (47.9ms)
+Completed 200 OK in 125ms (Views: 102.9ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-11-04 18:06:05 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-11-04 18:06:05 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-04 18:06:05 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-04 18:06:05 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-04 18:06:05 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-04 18:06:05 +0000
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-11-04 18:06:05 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-04 18:06:05 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-04 18:06:05 +0000
+
+
+Started GET "/restaurants/new" for 127.0.0.1 at 2014-11-04 18:06:10 +0000
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (52.5ms)
+Completed 200 OK in 95ms (Views: 94.1ms | ActiveRecord: 0.0ms)

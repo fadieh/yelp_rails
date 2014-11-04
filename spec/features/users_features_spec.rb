@@ -11,6 +11,13 @@ context "user not signed in and on the homepage" do
     visit('/')
     expect(page).not_to have_link('Sign out')
   end
+
+  it "should not be able to create a restaurant if not logged in" do
+    # visit('/')
+    # click_link('Add a restaurant')
+    # expect(page).to
+  end
+
 end
 
 context "user signed in on the homepage" do
@@ -34,4 +41,14 @@ context "user signed in on the homepage" do
     expect(page).not_to have_link('Sign in')
     expect(page).not_to have_link('Sign up')
   end
+
+  it "should edit/delete restaurants which they've created" do
+  end
+
+  it "can only leave 1 review per restaurant" do
+  end
+
+  it "users can delete their own review" do
+  end
+
 end

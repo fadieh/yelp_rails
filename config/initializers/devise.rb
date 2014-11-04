@@ -6,6 +6,8 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # config.secret_key = 'bac7c8defbbbff80c690e82bac88a2409248be3f37162ace31261612a31c5c085c724a2b2040147e55d8cb779f60af5dcf1dc96d43986fcf359d5665e6897a9e'
 
+  config.omniauth :facebook, Rails.application.secrets.app_id, Rails.application.secrets.app_secret
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -120,7 +122,6 @@ Devise.setup do |config|
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
   config.reconfirmable = true
-
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [ :email ]
 

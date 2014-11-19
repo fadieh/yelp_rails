@@ -73,6 +73,18 @@ end
     expect(page).not_to have_link('Review KFC')
   end
 
+  it 'user can delete their own review' do
+    visit('/')
+    user_sign_up
+    create_a_restaurant
+    create_a_review
+    expect(page).to have_link('Delete review')
+    click_link('Sign out')
+    user_sign_up_two
+    expect(page).not_to have_link('Delete review')
+
+  end
+
 end
 
   # it "can only leave 1 review per restaurant" do

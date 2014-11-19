@@ -5520,3 +5520,949 @@ Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 14:26:43 +00
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 14:26:43 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:17:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (54.2ms)
+Completed 500 Internal Server Error in 71ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c19ba87e8>:0x007f8c19bb3da0>):
+    16: 	<li>
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 	<% if current_user == review.user %>
+    19: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    20: 	<% end %>
+    21: 	</li>
+    22: <% end %>
+  app/views/restaurants/index.html.erb:19:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:17:28 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (13.2ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c19ba87e8>:0x007f8c1a893ea8>):
+    16: 	<li>
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 	<% if current_user == review.user %>
+    19: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    20: 	<% end %>
+    21: 	</li>
+    22: <% end %>
+  app/views/restaurants/index.html.erb:19:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:17:31 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c19ba87e8>:0x007f8c141dd088>):
+    16: 	<li>
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 	<% if current_user == review.user %>
+    19: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    20: 	<% end %>
+    21: 	</li>
+    22: <% end %>
+  app/views/restaurants/index.html.erb:19:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:17:32 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (16.0ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c19ba87e8>:0x007f8c1699a030>):
+    16: 	<li>
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 	<% if current_user == review.user %>
+    19: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    20: 	<% end %>
+    21: 	</li>
+    22: <% end %>
+  app/views/restaurants/index.html.erb:19:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:17:33 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c19ba87e8>:0x007f8c189cb2a0>):
+    16: 	<li>
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 	<% if current_user == review.user %>
+    19: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    20: 	<% end %>
+    21: 	</li>
+    22: <% end %>
+  app/views/restaurants/index.html.erb:19:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:17:33 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (14.4ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c19ba87e8>:0x007f8c18db4588>):
+    16: 	<li>
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 	<% if current_user == review.user %>
+    19: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    20: 	<% end %>
+    21: 	</li>
+    22: <% end %>
+  app/views/restaurants/index.html.erb:19:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:17:33 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.3ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (13.2ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c19ba87e8>:0x007f8c1ae46a58>):
+    16: 	<li>
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 	<% if current_user == review.user %>
+    19: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    20: 	<% end %>
+    21: 	</li>
+    22: <% end %>
+  app/views/restaurants/index.html.erb:19:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:17:33 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (13.3ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c19ba87e8>:0x007f8c19bfa7f0>):
+    16: 	<li>
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 	<% if current_user == review.user %>
+    19: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    20: 	<% end %>
+    21: 	</li>
+    22: <% end %>
+  app/views/restaurants/index.html.erb:19:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119852003440'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:19:17 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (30.8ms)
+Completed 500 Internal Server Error in 35ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c1b919778>:0x007f8c1b918d78>):
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 
+    19: 	<% if current_user == review.user %>
+    20: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    21: 	<% end %>
+    22: 	
+    23: 	</li>
+  app/views/restaurants/index.html.erb:20:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:19:18 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (13.3ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c1b919778>:0x007f8c1abd3348>):
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 
+    19: 	<% if current_user == review.user %>
+    20: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    21: 	<% end %>
+    22: 	
+    23: 	</li>
+  app/views/restaurants/index.html.erb:20:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:19:18 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c1b919778>:0x007f8c1aee7de0>):
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 
+    19: 	<% if current_user == review.user %>
+    20: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    21: 	<% end %>
+    22: 	
+    23: 	</li>
+  app/views/restaurants/index.html.erb:20:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (55.4ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:19:18 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (15.5ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c1b919778>:0x007f8c148b3830>):
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 
+    19: 	<% if current_user == review.user %>
+    20: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    21: 	<% end %>
+    22: 	
+    23: 	</li>
+  app/views/restaurants/index.html.erb:20:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:19:18 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (15.1ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c1b919778>:0x007f8c15a3c9d0>):
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 
+    19: 	<% if current_user == review.user %>
+    20: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    21: 	<% end %>
+    22: 	
+    23: 	</li>
+  app/views/restaurants/index.html.erb:20:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:19:18 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c1b919778>:0x007f8c188e55e8>):
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 
+    19: 	<% if current_user == review.user %>
+    20: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    21: 	<% end %>
+    22: 	
+    23: 	</li>
+  app/views/restaurants/index.html.erb:20:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:19:19 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (15.9ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f8c1b919778>:0x007f8c18cc52d0>):
+    17: 	<%= review.thoughts %>, <strong><%= review.rating %></strong>/5<br>
+    18: 
+    19: 	<% if current_user == review.user %>
+    20: 	<%= link_to "Delete review", review_path(restaurant, :id => review.id), method: :delete %>
+    21: 	<% end %>
+    22: 	
+    23: 	</li>
+  app/views/restaurants/index.html.erb:20:in `block (2 levels) in _app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+  app/views/restaurants/index.html.erb:15:in `block in _app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+  app/views/restaurants/index.html.erb:3:in `_app_views_restaurants_index_html_erb___1627573186683159470_70119867374800'
+
+
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/fadie/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:19:47 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 5]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 5]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 6]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 6]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 7]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 7]]
+  Rendered restaurants/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 63ms (Views: 59.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-11-19 18:19:47 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-11-19 18:19:47 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 18:19:47 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:47 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:47 +0000
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:47 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:47 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:47 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:47 +0000
+
+
+Started DELETE "/restaurants/3/reviews/6" for 127.0.0.1 at 2014-11-19 18:19:49 +0000
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+lUmRbrAiZbRKQ/w/YPXXwcxYGLt9YppaeniJsccU18=", "restaurant_id"=>"3", "id"=>"6"}
+  [1m[35mReview Load (0.3ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "reviews" WHERE "reviews"."id" = $1  [["id", 6]]
+  [1m[36m (8.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:9292/restaurants
+Completed 302 Found in 14ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2014-11-19 18:19:49 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 5]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 5]]
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 6]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 6]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 7]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 7]]
+  Rendered restaurants/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 52ms (Views: 48.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-11-19 18:19:49 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 18:19:49 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:49 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:49 +0000
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:49 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:49 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:49 +0000
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-11-19 18:19:49 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:49 +0000
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 18:19:51 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.6ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.9ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mReview Load (0.5ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Load (0.8ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Exists (0.5ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.6ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (1.3ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 5]]
+  [1m[36mReview Load (0.5ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 5]]
+  [1m[35mReview Exists (0.5ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 6]]
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 6]]
+  [1m[35mReview Exists (0.6ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 7]]
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 7]]
+  Rendered restaurants/index.html.erb within layouts/application (66.7ms)
+Completed 200 OK in 138ms (Views: 121.7ms | ActiveRecord: 14.3ms)
+
+
+Started DELETE "/restaurants/4/reviews/7" for 127.0.0.1 at 2014-11-19 18:19:54 +0000
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+lUmRbrAiZbRKQ/w/YPXXwcxYGLt9YppaeniJsccU18=", "restaurant_id"=>"4", "id"=>"7"}
+  [1m[35mReview Load (0.4ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "reviews" WHERE "reviews"."id" = $1  [["id", 7]]
+  [1m[36m (8.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:9292/restaurants
+Completed 302 Found in 11ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2014-11-19 18:19:54 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 4]]
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.3ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Load (0.6ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 5]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 5]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 6]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 6]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 7]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 7]]
+  Rendered restaurants/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 52ms (Views: 46.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-11-19 18:19:54 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:54 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:54 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 18:19:54 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-11-19 18:19:54 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:54 +0000
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:54 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:54 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:54 +0000
+
+
+Started DELETE "/restaurants/4/reviews/8" for 127.0.0.1 at 2014-11-19 18:19:55 +0000
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+lUmRbrAiZbRKQ/w/YPXXwcxYGLt9YppaeniJsccU18=", "restaurant_id"=>"4", "id"=>"8"}
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 8]]
+  [1m[35m (8.2ms)[0m  COMMIT
+Redirected to http://localhost:9292/restaurants
+Completed 302 Found in 11ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2014-11-19 18:19:55 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Exists (0.6ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 4]]
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Exists (0.4ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 5]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 5]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 6]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 6]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 7]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 7]]
+  Rendered restaurants/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 49ms (Views: 44.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-11-19 18:19:55 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 18:19:55 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-11-19 18:19:55 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:55 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:55 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:55 +0000
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:55 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:55 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 18:19:55 +0000
+
+
+Started GET "/restaurants/3/reviews/new" for 127.0.0.1 at 2014-11-19 18:20:01 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"3"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered reviews/new.html.erb within layouts/application (13.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/restaurants/3/reviews" for 127.0.0.1 at 2014-11-19 18:20:04 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+lUmRbrAiZbRKQ/w/YPXXwcxYGLt9YppaeniJsccU18=", "review"=>{"thoughts"=>"YO!", "rating"=>"1"}, "commit"=>"Leave Review", "restaurant_id"=>"3"}
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("created_at", "rating", "restaurant_id", "thoughts", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-11-19 18:20:04.074070"], ["rating", 1], ["restaurant_id", 3], ["thoughts", "YO!"], ["updated_at", "2014-11-19 18:20:04.074070"]]
+  [1m[36m (8.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "reviews" SET "updated_at" = $1, "user_id" = $2 WHERE "reviews"."id" = 9  [["updated_at", "2014-11-19 18:20:04.088994"], ["user_id", 2]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:9292/restaurants
+Completed 302 Found in 21ms (ActiveRecord: 11.4ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2014-11-19 18:20:04 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 4]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 5]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 5]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 6]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 6]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 7]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1[0m  [["restaurant_id", 7]]
+  Rendered restaurants/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 59ms (Views: 56.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-11-19 18:20:04 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-11-19 18:20:04 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 18:20:04 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 18:20:04 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 18:20:04 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 18:20:04 +0000
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-11-19 18:20:04 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 18:20:04 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 18:20:04 +0000
+
+
+Started DELETE "/restaurants/3/reviews/9" for 127.0.0.1 at 2014-11-19 18:20:08 +0000
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+lUmRbrAiZbRKQ/w/YPXXwcxYGLt9YppaeniJsccU18=", "restaurant_id"=>"3", "id"=>"9"}
+  [1m[35mReview Load (0.3ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "reviews" WHERE "reviews"."id" = $1  [["id", 9]]
+  [1m[36m (8.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:9292/restaurants
+Completed 302 Found in 12ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2014-11-19 18:20:08 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 4]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 5]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 5]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 6]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 6]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 7]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 7]]
+  Rendered restaurants/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 18:20:08 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-11-19 18:20:08 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 18:20:08 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 18:20:08 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 18:20:08 +0000
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-11-19 18:20:08 +0000
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-11-19 18:20:08 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 18:20:08 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 18:20:08 +0000
+
+
+Started GET "/restaurants/3/reviews/new" for 127.0.0.1 at 2014-11-19 18:21:09 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"3"}
+  [1m[36mRestaurant Load (0.7ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered reviews/new.html.erb within layouts/application (4.9ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 162ms (Views: 157.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/restaurants/3/reviews" for 127.0.0.1 at 2014-11-19 18:21:12 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+lUmRbrAiZbRKQ/w/YPXXwcxYGLt9YppaeniJsccU18=", "review"=>{"thoughts"=>"Yo\r\n", "rating"=>"1"}, "commit"=>"Leave Review", "restaurant_id"=>"3"}
+  [1m[36mRestaurant Load (0.7ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "reviews" ("created_at", "rating", "restaurant_id", "thoughts", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-11-19 18:21:12.502291"], ["rating", 1], ["restaurant_id", 3], ["thoughts", "Yo\r\n"], ["updated_at", "2014-11-19 18:21:12.502291"]]
+  [1m[35m (10.1ms)[0m  COMMIT
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "reviews" SET "updated_at" = $1, "user_id" = $2 WHERE "reviews"."id" = 10[0m  [["updated_at", "2014-11-19 18:21:12.523730"], ["user_id", 2]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://localhost:9292/restaurants
+Completed 302 Found in 37ms (ActiveRecord: 14.9ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2014-11-19 18:21:12 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[36m (1.1ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.7ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mReview Exists (0.4ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 3]]
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mReview Load (0.6ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 3]]
+  [1m[36mReview Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Load (0.4ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 4]]
+  [1m[36mReview Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Load (0.4ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Load (0.5ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 5]]
+  [1m[35mReview Load (0.4ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 5]]
+  [1m[36mReview Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 6]]
+  [1m[35mReview Load (0.4ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 6]]
+  [1m[36mReview Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 7]]
+  [1m[35mReview Load (0.5ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 2 LIMIT 1  [["restaurant_id", 7]]
+  Rendered restaurants/index.html.erb within layouts/application (56.5ms)
+Completed 200 OK in 186ms (Views: 172.5ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-11-19 18:21:13 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 18:21:13 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 18:21:13 +0000
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-11-19 18:21:13 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 18:21:13 +0000
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-11-19 18:21:13 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 18:21:13 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 18:21:13 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 18:21:13 +0000

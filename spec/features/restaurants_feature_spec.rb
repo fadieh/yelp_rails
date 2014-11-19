@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 require 'helpers/user_sign_up'
+require 'helpers/create_a_restaurant'
 
 describe 'restaurants' do
 
@@ -58,6 +59,8 @@ end
 		end
 
 		it 'lets a user edit a restaurant' do
+			user_sign_up
+			create_a_restaurant
 			visit '/restaurants'
 			click_link 'Edit KFC'
 			fill_in 'Name', with: 'Kentucky Fried Chicken'
@@ -69,11 +72,9 @@ end
 
 	context 'deleting restaurants' do
 
-		before do
-			Restaurant.create(:name => "KFC")
-		end
-
 		it "removes a restaurant when a user clicks a delete link" do
+			user_sign_up
+			create_a_restaurant
 			visit '/restaurants'
 			click_link 'Delete KFC'
 			expect(page).not_to have_content 'KFC'

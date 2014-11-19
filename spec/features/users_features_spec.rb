@@ -1,5 +1,8 @@
 require 'rails_helper'
 
+require 'helpers/user_sign_up'
+require 'helpers/create_a_restaurant'
+
 context "user not signed in and on the homepage" do
   it "should see a 'sign in' link and a 'sign up' link" do
     visit('/')
@@ -48,7 +51,18 @@ end
   it 'user must be logged in to create restaurants' do
     visit('/')
     expect(page).not_to have_link('Add a restaurant')
+    user_sign_up
+    expect(page).to have_link('Add a restaurant')
   end
+
+
+  it 'user can only edit/delete restaurants theyve created' do
+    visit('/')
+    user_sign_up
+    create_a_restaurant
+    expect(page).to have_link('Edit KFC')
+    expect(page).to have_link('Delete KFC')
+    end
 end
 
   # it "should edit/delete restaurants which they've created" do

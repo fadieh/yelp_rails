@@ -31,4 +31,6 @@ No restaurants yet
 <p><%= flash[:notice] %></p>
 <% end %>
 
+<% if current_user %>
 <a href="/restaurants/new">Add a restaurant</a>
+<% end %>

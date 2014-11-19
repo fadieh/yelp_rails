@@ -2,7 +2,6 @@
 
 <% @restaurants.each do |restaurant| %>
 <h2> <%= link_to "#{restaurant.name}", restaurant_path(restaurant) %> </h2>
-<h6> <%= link_to "Review #{restaurant.name}", new_restaurant_review_path(restaurant) %></h6>
 
 <h3>Reviews for <%= restaurant.name %></h3>
 
@@ -21,6 +20,10 @@
 	</ul>
 <% else %>
 	<p>No reviews.</p>
+<% end %>
+
+<% unless restaurant.has_review(current_user) %>
+<h3> <%= link_to "Review #{restaurant.name}", new_restaurant_review_path(restaurant) %> </h3>
 <% end %>
 
 <% end %>

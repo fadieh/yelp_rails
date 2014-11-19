@@ -2,6 +2,7 @@ require 'rails_helper'
 
 require 'helpers/user_sign_up'
 require 'helpers/create_a_restaurant'
+require 'helpers/create_a_review'
 
 context "user not signed in and on the homepage" do
   it "should see a 'sign in' link and a 'sign up' link" do
@@ -62,11 +63,17 @@ end
     create_a_restaurant
     expect(page).to have_link('Edit KFC')
     expect(page).to have_link('Delete KFC')
-    end
-end
+  end
 
-  # it "should edit/delete restaurants which they've created" do
-  # end
+  it 'user can only leave 1 review per restaurant' do
+    visit('/')
+    user_sign_up
+    create_a_restaurant
+    create_a_review
+    expect(page).not_to have_link('Review KFC')
+  end
+
+end
 
   # it "can only leave 1 review per restaurant" do
   # end

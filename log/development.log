@@ -5203,3 +5203,320 @@ Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 13:37:56 +00
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 13:37:56 +0000
+
+
+Started GET "/restaurants/3/reviews/new" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"3"}
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered reviews/new.html.erb within layouts/application (14.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 120ms (Views: 97.6ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/restaurants/3/reviews/new" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"3"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered reviews/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-11-19 14:09:33 +0000
+
+
+Started POST "/restaurants/3/reviews" for 127.0.0.1 at 2014-11-19 14:10:09 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+lUmRbrAiZbRKQ/w/YPXXwcxYGLt9YppaeniJsccU18=", "review"=>{"thoughts"=>"so so", "rating"=>"1"}, "commit"=>"Leave Review", "restaurant_id"=>"3"}
+  [1m[35mRestaurant Load (0.4ms)[0m  SELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (10.1ms)[0m  INSERT INTO "reviews" ("created_at", "rating", "restaurant_id", "thoughts", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-11-19 14:10:09.109131"], ["rating", 1], ["restaurant_id", 3], ["thoughts", "so so"], ["updated_at", "2014-11-19 14:10:09.109131"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:9292/restaurants
+Completed 302 Found in 30ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2014-11-19 14:10:09 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 5]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 6]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 7]]
+  Rendered restaurants/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 47ms (Views: 43.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-11-19 14:10:09 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-11-19 14:10:09 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 14:10:09 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 14:10:09 +0000
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-11-19 14:10:09 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 14:10:09 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 14:10:09 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 14:10:09 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 14:10:09 +0000
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2014-11-19 14:12:11 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 5]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 6]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 7]]
+  Rendered restaurants/index.html.erb within layouts/application (47.4ms)
+Completed 200 OK in 132ms (Views: 112.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-11-19 14:12:11 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-11-19 14:12:11 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 14:12:11 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 14:12:11 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 14:12:11 +0000
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-11-19 14:12:11 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 14:12:11 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 14:12:11 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 14:12:11 +0000
+
+
+Started GET "/restaurants/3/reviews/new" for 127.0.0.1 at 2014-11-19 14:12:13 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"3"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered reviews/new.html.erb within layouts/application (17.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUserIdToReviews (20141119142029)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "reviews" ADD COLUMN "user_id" integer[0m
+  [1m[35m (9.1ms)[0m  CREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141119142029"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 14:26:39 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 3 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Exists (0.3ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 4]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 3 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 3 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 3 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 5]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 3 LIMIT 1[0m  [["restaurant_id", 5]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 6]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 3 LIMIT 1[0m  [["restaurant_id", 6]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 7]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 3 LIMIT 1[0m  [["restaurant_id", 7]]
+  Rendered restaurants/index.html.erb within layouts/application (59.7ms)
+Completed 200 OK in 165ms (Views: 141.2ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-11-19 14:26:39 +0000
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-11-19 14:26:39 +0000
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-11-19 14:26:39 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 14:26:39 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 14:26:39 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 14:26:39 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 14:26:39 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 14:26:39 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 14:26:39 +0000
+
+
+Started GET "/restaurants/3/reviews/new" for 127.0.0.1 at 2014-11-19 14:26:40 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"3"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered reviews/new.html.erb within layouts/application (23.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 56ms (Views: 54.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/restaurants/3/reviews" for 127.0.0.1 at 2014-11-19 14:26:43 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IN3g/4IwM+QblcbnyFG73bwcG+KOV91tXwCd0EBT2eg=", "review"=>{"thoughts"=>"hello", "rating"=>"1"}, "commit"=>"Leave Review", "restaurant_id"=>"3"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "reviews" ("created_at", "rating", "restaurant_id", "thoughts", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-11-19 14:26:43.361577"], ["rating", 1], ["restaurant_id", 3], ["thoughts", "hello"], ["updated_at", "2014-11-19 14:26:43.361577"]]
+  [1m[36m (8.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "reviews" SET "updated_at" = $1, "user_id" = $2 WHERE "reviews"."id" = 5  [["updated_at", "2014-11-19 14:26:43.373601"], ["user_id", 3]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:9292/restaurants
+Completed 302 Found in 17ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2014-11-19 14:26:43 +0000
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 3]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 3 LIMIT 1[0m  [["restaurant_id", 3]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 4]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 3 LIMIT 1[0m  [["restaurant_id", 4]]
+  [1m[35mReview Exists (0.5ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 3 LIMIT 1[0m  [["restaurant_id", 1]]
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 2]]
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 3 LIMIT 1[0m  [["restaurant_id", 2]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 5]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 3 LIMIT 1[0m  [["restaurant_id", 5]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 6]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 3 LIMIT 1[0m  [["restaurant_id", 6]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 7]]
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."restaurant_id" = $1 AND "reviews"."user_id" = 3 LIMIT 1[0m  [["restaurant_id", 7]]
+  Rendered restaurants/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 49ms (Views: 44.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-11-19 14:26:43 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 14:26:43 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 14:26:43 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 14:26:43 +0000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 14:26:43 +0000
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-11-19 14:26:43 +0000
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-11-19 14:26:43 +0000
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-11-19 14:26:43 +0000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 14:26:43 +0000

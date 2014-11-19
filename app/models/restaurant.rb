@@ -6,4 +6,8 @@ class Restaurant < ActiveRecord::Base
 
   belongs_to :user
 
+  def has_review(user)
+  	reviews.find_by(user: user)
+  end
+
 end
